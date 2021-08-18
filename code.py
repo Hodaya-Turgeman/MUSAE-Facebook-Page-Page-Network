@@ -18,9 +18,9 @@ politician=df.loc[(df['page_type'] =='politician') ]
                                         #Adding adam to the list
 
 nP = g.subgraph(politician['id'].values)  
-government=df.loc[(df['page_type'] =='government') ]
-nT = g.subgraph(list(politician['id'].values)+list(government['id'].values))  
-nTv=g.subgraph(government['id'].values)
+tvshows=df.loc[(df['page_type'] =='tvshow') ]
+nT = g.subgraph(list(politician['id'].values)+list(tvshows['id'].values))  
+nTv=g.subgraph(tvshows['id'].values)
 dg= nx.Graph()
 dg.add_nodes_from(nT.nodes)
 dg.add_edges_from(nT.edges-nP.edges-nTv.edges)
@@ -31,10 +31,37 @@ for node in dg.nodes:
         color_map.append('pink') 
     else:
         color_map.append('blue') 
-    
-nx.draw(dg,node_color=color_map,node_size=15)
-plt.savefig('file1.png')
+
+# degrees = [dg.degree(n) for n in dg.nodes()]  #A list with all the graph's degrees
+# num = degrees.count(1)
+# print(num)
+
+# cen = nx.closeness_centrality(dg)
+# avg = sum(cen.values()) / float(len(cen))
+# print('closnes average', avg)
+
+
+
+# bit = nx.betweenness_centrality(dg)
+# avgb = sum(bit.values()) / float(len(bit))
+# print('betweeness average', avgb)
+
+deg = nx.degree_centrality(dg)
+avgd = sum(deg.values()) / float(len(deg))
+print('degree average', avgd)
+# print(nx.diameter(g))
+# print('diameter')
+#print(nx.info(dg))
+#print( 'The number Connected Components: {0}'.format(nx.number_connected_components(dg)))      #Print the number of connected components in the nieghbors graph
+
+
+
+# nx.draw_random(dg,node_color=color_map,node_size=15)
+# nx.draw(dg,node_color=color_map,node_size=15)
+#plt.savefig('file1.png')
 # plt.show()
+
+
 # nx.draw(nG, with_labels = True)    
 # plt.show()  
 # print(nx.info(g))
