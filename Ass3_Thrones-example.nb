@@ -1,0 +1,620 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     37272,        612]
+NotebookOptionsPosition[     36731,        589]
+NotebookOutlinePosition[     37116,        606]
+CellTagsIndexPosition[     37073,        603]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.698594093440968*^9, 3.69859410909095*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"file", " ", "=", " ", 
+   RowBox[{"Rest", "[", 
+    RowBox[{"Import", "[", "\"\<stormofswords.csv\>\"", "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.698594122745384*^9, 3.698594131283293*^9}, {
+  3.6985947016580667`*^9, 3.698594702193153*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"tribes", " ", "=", " ", 
+   RowBox[{"Import", "[", "\"\<tribes.csv\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6985941382107573`*^9, 3.698594153631366*^9}, 
+   3.698594321296535*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"nodes", " ", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"tribes", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.698594409016368*^9, 3.698594495694606*^9}, {
+  3.698594680640011*^9, 3.698594688846789*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"edges", " ", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "\[UndirectedEdge]", 
+      RowBox[{"#", "[", 
+       RowBox[{"[", "2", "]"}], "]"}]}], "&"}], "/@", " ", 
+    RowBox[{"file", " ", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "2"}], "}"}]}], "]"}], "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.69859434097215*^9, 3.6985943808133507`*^9}, {
+  3.698594594420438*^9, 3.69859465964769*^9}, {3.698594705187663*^9, 
+  3.6985947122105217`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"T", " ", "=", 
+  RowBox[{"Graph", "[", 
+   RowBox[{"nodes", ",", "edges"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6985947158980007`*^9, 3.698594723649089*^9}, {
+  3.6985947748386374`*^9, 3.698594781201376*^9}, {3.698595557720889*^9, 
+  3.698595570440399*^9}, {3.698595603263811*^9, 3.698595603653762*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{
+      "Aegon", "Aemon", "Aerys", "Alliser", "Amory", "Anguy", "Arya", "Balon",
+        "Barristan", "Belwas", "Beric", "Bowen", "Bran", "Brienne", "Bronn", 
+       "Brynden", "Catelyn", "Cersei", "Chataya", "Craster", "Cressen", 
+       "Daario", "Daenerys", "Dalla", "Davos", "Doran", "Drogo", "Eddard", 
+       "Eddison", "Edmure", "Elia", "Ellaria", "Gendry", "Gilly", "Gregor", 
+       "Grenn", "Hodor", "Hoster", "Illyrio", "Ilyn", "Irri", "Jaime", 
+       "Janos", "Jeyne", "Joffrey", "Jojen", "Jon", "Jon Arryn", "Jorah", 
+       "Karl", "Kevan", "Kraznys", "Lancel", "Loras", "Lothar", "Luwin", 
+       "Lysa", "Mace", "Mance", "Margaery", "Marillion", "Meera", 
+       "Melisandre", "Meryn", "Missandei", "Myrcella", "Nan", "Oberyn", 
+       "Olenna", "Orell", "Petyr", "Podrick", "Pycelle", "Qhorin", "Qyburn", 
+       "Rakharo", "Ramsay", "Rattleshirt", "Renly", "Rhaegar", "Rickard", 
+       "Rickon", "Robb", "Robert", "Robert Arryn", "Roose", "Roslin", 
+       "Salladhor", "Samwell", "Sandor", "Sansa", "Shae", "Shireen", 
+       "Stannis", "Styr", "Theon", "Thoros", "Tommen", "Tyrion", "Tywin", 
+       "Val", "Varys", "Viserys", "Walder", "Walton", "Worm", "Ygritte"}, {
+      Null, CompressedData["
+1:eJwVxV1b2jAYAFBEZ/iw2ERGZVYQqw6DMTK2Yi0CKg5kmyCJsjasAm9ENi/2
+/+/27Nyc0vzvaB6PxWKzlVjs//GDeLBKV+UqrOo1/10HraM0MpCJCCohB1HE
+EEcjJNETCtEMQcJNJVMf0+vpUnpmHBqnBjfOjaZxY4yMwJhm3E1ns2eaZt1c
+YgNnsIkJLuAjTPEJ9nAXC/yEx1jhCANekgzZJEXikDKhhJE2uSOShGRCgCyy
+n3I7uWNrxUpaKStn7VjHVtX6bF1Z362hJa1X60/+ff6njey0bdjYJja1uT2y
+hS3t0Fa7BwWzUC+MC8vSbD/rFJ2y03Y6Tnh4etg8Khzv0ARN0gwt0CJ1KKMu
+bdNvdEAljeicQmWtslHxmcPKrMZc1mBtds06LGQRmzM4bZ4GPM7XeJZv812+
+zw94hfu8yVv8K+/zey55wCP+zKf8hb+deWeymqymqrnqTu1LbeE23Nv6+PzG
+I96Rd+l1vUcPPO1n/W1/3+/79/6z/+K/NYNWvhW0y1fH1/Nr6Ox1LnqN+/7A
+HTQGi2FyWBxWh/LBHE0FEglhiIwwRUEcCipOBBNc1EVX/BAPYiSehBKRmAoQ
+WixlXCblQEZy9nj5lAk2gmywG+wHB0El8IN+mA5LYTlshzKcKaQMlVFEUcUU
+VzXlKk811KW6Vreqq3pqoEZKqkcVqomCydZk8SsfxaNElI9a0SAK5g1IwCZs
+wQcowh44UIYK1MCFC2hAGzrQhR7cwQAkhDCBCBY6oU1NtKOpZrqmL3RHd3VP
+32mpIz3XoF/0Qi9fthd3r8NXWNaX3eX4N33rv93/A5R+ncw=
+       "]}]]}, 
+    TagBox[GraphicsGroupBox[GraphicsComplexBox[CompressedData["
+1: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
+6p7ZQcZ/AHHxe4c=
+       "], {
+        {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+         {Arrowheads[0.], ArrowBox[{1, 23}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{2, 36}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{2, 47}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{2, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{2, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{2, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{3, 42}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{3, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{3, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{3, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{4, 43}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{4, 47}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{4, 59}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{5, 68}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{6, 7}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{6, 11}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 11}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 13}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 16}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 18}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 28}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 33}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 35}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 42}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 45}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 47}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 82}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 86}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 90}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 97}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{7, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{8, 42}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{8, 54}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{8, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{8, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{8, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{8, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{9, 10}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{9, 23}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{9, 42}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{9, 49}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{9, 80}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{9, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{10, 23}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{10, 39}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{10, 49}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{11, 28}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{11, 33}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{11, 90}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{11, 97}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{12, 43}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{12, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 17}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 28}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 37}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 46}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 47}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 56}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 62}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 67}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 82}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{13, 96}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{14, 17}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{14, 18}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{14, 42}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{14, 54}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{14, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{14, 86}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{14, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{15, 18}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{15, 35}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{15, 72}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{15, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], 
+          ArrowBox[BezierCurveBox[{16, 111, 114, 116, 122, 124, 127, 16},
+           SplineDegree->7], 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{16, 17}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{16, 30}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{16, 55}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{16, 81}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{16, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{16, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{16, 104}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 18}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 28}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 30}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 38}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 42}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 44}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 57}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 71}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 86}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 87}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{17, 104}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 28}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 31}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 35}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 40}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 42}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 45}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 57}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 64}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 73}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 90}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 92}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{18, 102}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{19, 92}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{19, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{20, 34}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{20, 47}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{20, 50}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{20, 59}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{20, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{21, 25}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{22, 23}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{22, 27}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{22, 41}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{22, 49}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{23, 27}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{23, 41}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{23, 49}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{23, 52}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{23, 65}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{23, 76}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{23, 80}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{23, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{23, 103}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{23, 106}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{24, 47}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{24, 59}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{24, 101}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{25, 63}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{25, 88}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{25, 93}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{25, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{26, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{27, 41}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{27, 49}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{28, 42}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{28, 47}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{28, 82}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{28, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{28, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{28, 90}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{28, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{29, 36}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{29, 47}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{29, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{30, 38}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{30, 42}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{30, 55}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{30, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{30, 87}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{30, 104}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{31, 35}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{31, 42}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{31, 80}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{31, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{32, 68}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{32, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{33, 90}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{33, 97}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{34, 47}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{34, 59}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{34, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{35, 40}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{35, 42}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{35, 45}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{35, 64}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{35, 68}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{35, 90}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{35, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{35, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{36, 47}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{36, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{37, 46}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{37, 62}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{37, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{38, 57}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{40, 45}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{40, 64}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{40, 90}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{40, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{41, 65}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 45}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 54}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 64}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 75}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 79}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 98}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{42, 105}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{43, 47}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{43, 59}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{43, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{43, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{44, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 51}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 54}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 60}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 64}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 66}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 68}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 90}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 98}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{45, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{46, 62}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{46, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 59}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 62}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 63}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 70}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 74}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 78}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 95}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 96}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 101}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{47, 107}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{48, 57}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{48, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{49, 80}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{51, 53}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{51, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{51, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{51, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{51, 102}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{54, 60}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{54, 69}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{54, 79}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{54, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{54, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{55, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{55, 87}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{55, 104}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{56, 67}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{57, 61}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{57, 71}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{57, 85}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{57, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{57, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{57, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{58, 68}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{58, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{58, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{59, 74}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{59, 78}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{59, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{59, 95}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{59, 101}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{59, 107}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{60, 72}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{60, 79}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{60, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{60, 98}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{60, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{61, 85}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{61, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{62, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{63, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{63, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{64, 90}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{64, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{66, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{66, 98}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{66, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{68, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{68, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{69, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{71, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{71, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{71, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{71, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{71, 104}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{72, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{72, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{72, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{73, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{73, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{73, 102}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{74, 78}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{74, 89}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{74, 107}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{77, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{78, 107}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{79, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{79, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{79, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{79, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{79, 102}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{80, 84}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{80, 103}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{81, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{82, 83}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{82, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{82, 96}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{83, 86}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{83, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{83, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{83, 96}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{83, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{83, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{83, 104}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{84, 90}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{84, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{84, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{84, 97}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{84, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{84, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{85, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{87, 104}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{89, 94}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{90, 91}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{90, 97}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{90, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{91, 92}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{91, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{92, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{92, 102}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{94, 99}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{94, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{98, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{99, 100}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{99, 102}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{99, 103}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{100, 101}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{100, 102}, 0.06331267446223379]}, 
+         {Arrowheads[0.], ArrowBox[{100, 104}, 0.06331267446223379]}}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+         DiskBox[1, 0.06331267446223379], DiskBox[2, 0.06331267446223379], 
+         DiskBox[3, 0.06331267446223379], DiskBox[4, 0.06331267446223379], 
+         DiskBox[5, 0.06331267446223379], DiskBox[6, 0.06331267446223379], 
+         DiskBox[7, 0.06331267446223379], DiskBox[8, 0.06331267446223379], 
+         DiskBox[9, 0.06331267446223379], DiskBox[10, 0.06331267446223379], 
+         DiskBox[11, 0.06331267446223379], DiskBox[12, 0.06331267446223379], 
+         DiskBox[13, 0.06331267446223379], DiskBox[14, 0.06331267446223379], 
+         DiskBox[15, 0.06331267446223379], DiskBox[16, 0.06331267446223379], 
+         DiskBox[17, 0.06331267446223379], DiskBox[18, 0.06331267446223379], 
+         DiskBox[19, 0.06331267446223379], DiskBox[20, 0.06331267446223379], 
+         DiskBox[21, 0.06331267446223379], DiskBox[22, 0.06331267446223379], 
+         DiskBox[23, 0.06331267446223379], DiskBox[24, 0.06331267446223379], 
+         DiskBox[25, 0.06331267446223379], DiskBox[26, 0.06331267446223379], 
+         DiskBox[27, 0.06331267446223379], DiskBox[28, 0.06331267446223379], 
+         DiskBox[29, 0.06331267446223379], DiskBox[30, 0.06331267446223379], 
+         DiskBox[31, 0.06331267446223379], DiskBox[32, 0.06331267446223379], 
+         DiskBox[33, 0.06331267446223379], DiskBox[34, 0.06331267446223379], 
+         DiskBox[35, 0.06331267446223379], DiskBox[36, 0.06331267446223379], 
+         DiskBox[37, 0.06331267446223379], DiskBox[38, 0.06331267446223379], 
+         DiskBox[39, 0.06331267446223379], DiskBox[40, 0.06331267446223379], 
+         DiskBox[41, 0.06331267446223379], DiskBox[42, 0.06331267446223379], 
+         DiskBox[43, 0.06331267446223379], DiskBox[44, 0.06331267446223379], 
+         DiskBox[45, 0.06331267446223379], DiskBox[46, 0.06331267446223379], 
+         DiskBox[47, 0.06331267446223379], DiskBox[48, 0.06331267446223379], 
+         DiskBox[49, 0.06331267446223379], DiskBox[50, 0.06331267446223379], 
+         DiskBox[51, 0.06331267446223379], DiskBox[52, 0.06331267446223379], 
+         DiskBox[53, 0.06331267446223379], DiskBox[54, 0.06331267446223379], 
+         DiskBox[55, 0.06331267446223379], DiskBox[56, 0.06331267446223379], 
+         DiskBox[57, 0.06331267446223379], DiskBox[58, 0.06331267446223379], 
+         DiskBox[59, 0.06331267446223379], DiskBox[60, 0.06331267446223379], 
+         DiskBox[61, 0.06331267446223379], DiskBox[62, 0.06331267446223379], 
+         DiskBox[63, 0.06331267446223379], DiskBox[64, 0.06331267446223379], 
+         DiskBox[65, 0.06331267446223379], DiskBox[66, 0.06331267446223379], 
+         DiskBox[67, 0.06331267446223379], DiskBox[68, 0.06331267446223379], 
+         DiskBox[69, 0.06331267446223379], DiskBox[70, 0.06331267446223379], 
+         DiskBox[71, 0.06331267446223379], DiskBox[72, 0.06331267446223379], 
+         DiskBox[73, 0.06331267446223379], DiskBox[74, 0.06331267446223379], 
+         DiskBox[75, 0.06331267446223379], DiskBox[76, 0.06331267446223379], 
+         DiskBox[77, 0.06331267446223379], DiskBox[78, 0.06331267446223379], 
+         DiskBox[79, 0.06331267446223379], DiskBox[80, 0.06331267446223379], 
+         DiskBox[81, 0.06331267446223379], DiskBox[82, 0.06331267446223379], 
+         DiskBox[83, 0.06331267446223379], DiskBox[84, 0.06331267446223379], 
+         DiskBox[85, 0.06331267446223379], DiskBox[86, 0.06331267446223379], 
+         DiskBox[87, 0.06331267446223379], DiskBox[88, 0.06331267446223379], 
+         DiskBox[89, 0.06331267446223379], DiskBox[90, 0.06331267446223379], 
+         DiskBox[91, 0.06331267446223379], DiskBox[92, 0.06331267446223379], 
+         DiskBox[93, 0.06331267446223379], DiskBox[94, 0.06331267446223379], 
+         DiskBox[95, 0.06331267446223379], DiskBox[96, 0.06331267446223379], 
+         DiskBox[97, 0.06331267446223379], DiskBox[98, 0.06331267446223379], 
+         DiskBox[99, 0.06331267446223379], DiskBox[100, 0.06331267446223379], 
+         DiskBox[101, 0.06331267446223379], DiskBox[102, 0.06331267446223379],
+          DiskBox[103, 0.06331267446223379], 
+         DiskBox[104, 0.06331267446223379], DiskBox[105, 0.06331267446223379],
+          DiskBox[106, 0.06331267446223379], 
+         DiskBox[107, 0.06331267446223379]}}]],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{
+  3.698595571053659*^9, 3.69859560429943*^9, {3.6997927014737883`*^9, 
+   3.699792705405367*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 755},
+WindowMargins->{{217, Automatic}, {Automatic, 13}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 188, 4, 48, "Input"],
+Cell[749, 26, 291, 7, 48, "Input"],
+Cell[1043, 35, 227, 5, 48, "Input"],
+Cell[1273, 42, 316, 8, 48, "Input"],
+Cell[1592, 52, 604, 17, 48, "Input"],
+Cell[CellGroupData[{
+Cell[2221, 73, 332, 6, 48, "Input"],
+Cell[2556, 81, 34159, 505, 456, "Output"]
+}, Open  ]]
+}
+]
+*)
+
