@@ -108,7 +108,7 @@ cum.append(p[1])
 print(cum)
 for i in range(1,12):
     cum.append(cum[i-1]+p[i])
-print("ccccccccccccccccccccccccccc",cum)
+print("cumulative",cum)
 
 plt.hist(deg, bins=np.logspace(np.log10(1), np.log10(1000), 50), density=True, stacked=True, edgecolor='black',
          cumulative=-1)
