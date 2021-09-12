@@ -19,12 +19,11 @@ from pandas import read_csv
 from scipy.optimize import curve_fit
 import networkx.algorithms.community
 
-# G = nx.Graph()
-# df = pd.read_csv("Ass3_stormofswords.csv")                            #load database from csv file
 
 G = pd.read_csv('Ass3_stormofswords.csv', usecols = ['Source','Target', 'Weight'] )
 
 G = nx.from_pandas_edgelist(G, source = 'Source', target = 'Target' )
+
 # G = nx.read_weighted_edgelist('Ass3_stormofswords.csv')
 # P = pd.read_csv('Ass3_tribes.csv')
 # P = pd.DataFrame(P)
