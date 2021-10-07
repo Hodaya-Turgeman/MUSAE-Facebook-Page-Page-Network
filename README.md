@@ -1,13 +1,13 @@
 # MUSAE-Facebook-Page-Page-Network
 # Project in Social Networks 
 
-## Introduction:
+## Introduction
 Today, social networks have gained tremendous momentum, becoming a central tool for hundreds of millions of people around the world to share and consume information.
 For our project we took a graph of the world's largest network facebook.
 Which contained official pages from 4 categories, we focused on the pages of politicians and pages of government institutions, our goal was to examine the structure of these communities, who are the strongest internal vertices in each community and who are the strongest external vertices in each community.
 And finally understand how much these vertices have an impact on the community.
 
-## DataSet:
+## DataSet
 The data set we studied contains official Facebook pages from 4 categories:
 Politicians, Government, Companies and TV shows.
 The data contains 22,470 vertices which represent official facebook pages and
@@ -20,7 +20,7 @@ https://www.kaggle.com/rozemberczki/musae-facebook-pagepage-network?select=musae
 ## Research Question
 In our study we focused on 2 key communities that are indirectly related to each other which are politicians and government and we wanted to examine whether the strongest vertices( based on the degree and betweenness measures) from the outside have the most influence within the community or whether the strongest vertices from within have the impact.
 
-## Workflow:
+## Workflow
 #### We first built from the central graph the graph of the community of politicians and the graph of the government community.
 
 #### We have cleared the unnecessary information from each community graph and worked on the largest binding component in each of the communities (all actions we will perform below will be either the largest binding component in each community or the largest graph of all communities combined)
@@ -42,7 +42,7 @@ In our study we focused on 2 key communities that are indirectly related to each
 
 
 
-### Conclusions
+## Conclusions
 We came to a number of conclusions about the networks we researched.
 We saw that the main differences between the networks were the number of arcs in the politician graph, there were much fewer arcs and relatively the same number of vertices compared to the government graph which contained many more arcs and then there are many more possible paths between vertices.
 
