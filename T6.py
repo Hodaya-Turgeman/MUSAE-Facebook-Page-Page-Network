@@ -1,6 +1,4 @@
 from networkx.classes.graph import Graph
-import snap
-import sparse
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
